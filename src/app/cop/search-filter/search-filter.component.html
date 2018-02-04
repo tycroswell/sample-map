@@ -1,0 +1,21 @@
+<div class="search">
+  <div class="search-wrapper focus" style="">
+    <mat-icon matTooltip="Menu"
+              class="toogle-icon menus-icon mat-icon material-icons" role="img"
+              aria-hidden="true"  (click)="toggleMenu.emit()">menu</mat-icon>
+
+    <input  tabindex="1" [matAutocomplete]="auto" [formControl]="stateCtrl"
+            autocomplete="off" class="search-input ng-pristine ng-valid ng-touched"
+            placeholder="Search..." spellcheck="false" type="search">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+        <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />
+        <span>{{ state.name }}</span> |
+        <small>Population: {{state.population}}</small>
+      </mat-option>
+    </mat-autocomplete>
+
+    <mat-icon class="search-icon mat-icon material-icons" role="img" aria-hidden="true">search</mat-icon>
+  </div>
+
+</div>

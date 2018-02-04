@@ -1,0 +1,75 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-toolbar color="primary" class="tool-bar">
+  <mat-toolbar-row>
+    <button style=" padding: 0px; min-width: 0px;" mat-button>
+      <mat-icon class="tool-bar-icon">directions_boat</mat-icon>
+    </button>
+    <span>S2A</span>
+
+    <div class="tool-bar-menu">
+      <button mat-button routerLink="/cop" routerLinkActive="active">COP</button>
+      <button mat-button routerLink="/dashboard">Dashboard</button>
+    </div>
+
+
+    <span class="spacer"></span>
+    <div class="tool-bar-button">
+
+      <div #notificationDropdown  [ngClass]="{'open': open}" class="dropdown mat-elevation-z1">
+        <mat-card class="card" style="padding: 0px">
+          <mat-card-header class="header">
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>
+              <div class="name">Notifications</div>
+            </mat-card-title>
+            <mat-card-subtitle>You have 3 new notifications.</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <div style="flex-direction: row; box-sizing: border-box; display: flex; max-height: 100%; place-content: center flex-start; align-items: center;">
+              <mat-icon class="tool-bar-icon">notifications</mat-icon>
+              <div class="title" fxlayout="column" style="flex-direction: column; box-sizing: border-box; display: flex;">
+                <div class="name">This is a notification</div>
+                <div class="time">few sec ago</div>
+              </div>
+              <span _ngcontent-c18="" fxflex="" style="flex: 1 1 1e-09px; box-sizing: border-box;"></span>
+              <button mat-button >
+                <mat-icon class="tool-bar-icon">close</mat-icon>
+              </button>
+            </div>
+          </mat-card-content>
+
+        </mat-card>
+      </div>
+    </div>
+    <mat-icon class="tool-bar-notifications-icon" (click)="open = !open">notifications_active</mat-icon>
+    <mat-icon class="tool-bar-icon">person</mat-icon>
+    <span>Tyrone Croswell</span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon class="tool-bar-icon">keyboard_arrow_down</mat-icon>
+    </button>
+    <!--<button mat-button (click)="sideNavRightToggle.emit();">-->
+      <!--<mat-icon class="tool-bar-icon">format_align_right</mat-icon>-->
+    <!--</button>-->
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>account_circle</mat-icon>
+    <span>Profile</span>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon>settings</mat-icon>
+    <span>Setting</span>
+  </button>
+
+  <button mat-menu-item>
+    <mat-icon>help</mat-icon>
+    <span>Help</span>
+  </button>
+</mat-menu>
+
+
+
+

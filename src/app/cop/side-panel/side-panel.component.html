@@ -1,0 +1,122 @@
+<div id="side-panel">
+
+  <div class="side-panel-header mat-elevation-z1">
+    <div class="side-panel-header-label">
+      <label>FILTERS</label>
+    </div>
+    <span class="spacer"></span>
+    <mat-icon                   class="toogle-icon mat-icon material-icons" role="img"
+                                aria-hidden="true"  (click)="sidenav.toggle();">chevron_left</mat-icon>
+  </div>
+
+  <!--<mat-divider></mat-divider>-->
+  <!--<mat-accordion>-->
+    <!--<mat-expansion-panel>-->
+      <!--<mat-expansion-panel-header class="mat-elevation-z1">-->
+        <!--<mat-panel-title>-->
+          <!--FILTERS-->
+        <!--</mat-panel-title>-->
+        <!--<mat-panel-description>-->
+
+        <!--</mat-panel-description>-->
+      <!--</mat-expansion-panel-header>-->
+
+      <!--<mat-form-field>-->
+        <!--<input matInput placeholder="First name">-->
+      <!--</mat-form-field>-->
+
+      <!--<mat-form-field>-->
+        <!--<input matInput placeholder="Age">-->
+      <!--</mat-form-field>-->
+    <!--</mat-expansion-panel>-->
+    <!--<mat-expansion-panel  (opened)="panelOpenState = true"-->
+                          <!--(closed)="panelOpenState = false">-->
+      <!--<mat-expansion-panel-header class="mat-elevation-z1">-->
+        <!--<mat-panel-title>-->
+          <!--AOI-->
+        <!--</mat-panel-title>-->
+
+      <!--</mat-expansion-panel-header>-->
+      <!--<p>I'm visible because I am open</p>-->
+    <!--</mat-expansion-panel>-->
+  <!--</mat-accordion>-->
+  <div class="facet-container facet-container-first">
+    <div class="facet-title">
+      <label>Ship Characteristics</label>
+    </div>
+    <div class="facet-wrapper">
+      <section class="facet-section">
+        <span>Type</span>
+        <div>
+          <input type="text" placeholder="Search types">
+        </div>
+        <ul class="facet-values">
+          <li *ngFor="let characteristics of shipCharacteristics">
+            <mat-checkbox class="facet" [value]="characteristics.value"
+                          (change)="onCheckboxClicked($event, 'characteristics')">{{characteristics.viewValue}}</mat-checkbox>
+          </li>
+        </ul>
+        <small style="color: #0000ff"><a>Show more</a></small>
+      </section>
+      <section class="facet-section">
+        <label>Flags</label>
+        <div>
+          <input type="text" placeholder="Search flags">
+        </div>
+        <ul class="facet-values">
+          <li *ngFor="let flag of flags">
+            <mat-checkbox class="facet" [value]="flag.value"
+                          (change)="onCheckboxClicked($event, 'flag')">{{flag.viewValue}}</mat-checkbox>
+          </li>
+        </ul>
+        <small style="color: #0000ff"><a>Show more</a></small>
+      </section >
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="facet-container">
+    <div class="facet-title">
+      <label>VOI</label>
+    </div>
+    <div class="facet-wrapper">
+      <div class="facet-section"  style="width: 100%; margin-left: 15px;">
+        <span>Type</span>
+        <div>
+          <input type="text" placeholder="Search types">
+        </div>
+        <ul class="facet-values">
+          <li *ngFor="let characteristics of shipCharacteristics">
+            <mat-checkbox class="facet" [value]="characteristics.value"
+                          (change)="onCheckboxClicked($event,'voi')">{{characteristics.viewValue}}</mat-checkbox>
+          </li>
+        </ul>
+        <small style="color: #0000ff"><a>Show more</a></small>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="facet-container">
+    <div class="facet-title">
+      <label>AOI</label>
+    </div>
+    <div class="facet-wrapper" >
+      <div class="facet-section"  style="width: 100%; margin-left: 15px;">
+        <span>Type</span>
+        <div>
+          <input type="text" placeholder="Search types">
+        </div>
+        <ul class="facet-values">
+          <li *ngFor="let characteristics of shipCharacteristics">
+            <mat-checkbox class="facet" [value]="characteristics.value"
+                          (change)="onCheckboxClicked($event, 'aoi')">{{characteristics.viewValue}}</mat-checkbox>
+          </li>
+        </ul>
+        <small style="color: #0000ff"><a>Show more</a></small>
+      </div>
+
+    </div>
+  </div>
+
+</div>

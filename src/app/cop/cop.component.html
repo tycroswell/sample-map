@@ -1,0 +1,38 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened" (opened)="events.push('open!')"
+               (closed)="events.push('close!')">
+
+    <app-side-panel [sidenav]="sidenav"></app-side-panel>
+
+  </mat-sidenav>
+
+  <!--<mat-sidenav #sidenavend mode="over" position="end" [(opened)]="sidenavendOpened">-->
+  <!--<mat-tab-group>-->
+  <!--<mat-tab label="Query History">Query History</mat-tab>-->
+  <!--<mat-tab label="Notifications">Notifications</mat-tab>-->
+  <!--</mat-tab-group>-->
+  <!--&lt;!&ndash;<mat-accordion>&ndash;&gt;-->
+  <!--&lt;!&ndash;<mat-expansion-panel>&ndash;&gt;-->
+  <!--&lt;!&ndash;<mat-expansion-panel-header>&ndash;&gt;-->
+  <!--&lt;!&ndash;<mat-panel-title>&ndash;&gt;-->
+  <!--&lt;!&ndash;Query Tool&ndash;&gt;-->
+  <!--&lt;!&ndash;</mat-panel-title>&ndash;&gt;-->
+  <!--&lt;!&ndash;<mat-panel-description>&ndash;&gt;-->
+  <!--&lt;!&ndash;description goes here&ndash;&gt;-->
+  <!--&lt;!&ndash;</mat-panel-description>&ndash;&gt;-->
+  <!--&lt;!&ndash;</mat-expansion-panel-header>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;<mat-form-field>&ndash;&gt;-->
+  <!--&lt;!&ndash;<input matInput placeholder="Search">&ndash;&gt;-->
+  <!--&lt;!&ndash;</mat-form-field>&ndash;&gt;-->
+  <!--&lt;!&ndash;</mat-expansion-panel>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;</mat-accordion>&ndash;&gt;-->
+  <!--</mat-sidenav>-->
+
+  <mat-sidenav-content>
+    <app-search-filter (toggleMenu)="sidenav.toggle();"></app-search-filter>
+    <app-map></app-map>
+    <app-history-panel></app-history-panel>
+  </mat-sidenav-content>
+</mat-sidenav-container>

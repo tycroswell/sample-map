@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body, html {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.fullSize {
+  height: 100%;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+
+/*mat-checkbox.facet label .mat-checkbox-inner-container {*/
+  /*height: 15px !important;*/
+  /*width: 15px !important;*/
+
+/*}*/

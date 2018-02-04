@@ -1,0 +1,17 @@
+<div class="history-toggler" [ngClass]="{'open': openHistory}" (click)="openHistory = !openHistory">
+  <span style="margin-right: 5px;">History</span>
+  <span  *ngIf="history.length > 0">{{history.length}}</span>
+</div>
+<div class="history" [ngClass]="{'open': openHistory}"  *ngIf="openHistory">
+  <mat-chip-list class="mat-chip-list-stacked">
+    <mat-chip *ngFor="let h of history" selected="true" [color]="'accent'">
+      <div style="display: flex;">
+        {{h.viewValue}}
+        <span class="spacer"></span>
+        <mat-icon>delete</mat-icon>
+      </div>
+
+    </mat-chip>
+  </mat-chip-list>
+
+</div>

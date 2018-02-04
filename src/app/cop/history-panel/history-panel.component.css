@@ -1,0 +1,44 @@
+.history-toggler {
+  position: absolute;
+  bottom: 56px;
+  height: 20px;
+  background: blue;
+  z-index: 1;
+  border: 1px solid black;
+  width: 100px;
+  right: 60px;
+  border-radius: 10px 10px 0px 0px;
+  opacity: .9;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.history-toggler.open {
+  transition: all .3s ease-out;
+  bottom: 300px;
+  opacity: .9;
+  /*border-radius: 10px 0px 0px 0px;*/
+  background: steelblue;
+}
+
+.history {
+  bottom: 0px;
+}
+
+.history.open {
+  position: absolute;
+  bottom: 0px;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  height: 300px;
+  width: 400px;
+  right: 0px;
+  background: steelblue;
+  opacity: .9;
+  border-radius: 10px 0px 0px 0px;
+}
+
+mat-chip {
+  max-width: 200px;
+}
